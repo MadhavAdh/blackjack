@@ -4,6 +4,8 @@
 #include <random>
 #include <chrono> 
 
+
+
 /*
  *  The main function below runs a game of blackjack which
  *  calls a "play" function.  Make a copy of this code and 
@@ -45,6 +47,14 @@ int value(std::vector <char> hand) {
     }
   }
   return value; 
+}
+
+bool play(std::vector <char> hand, char dealer,std::vector <char> other_cards) {
+   if (value(hand) <= 16){
+     return true;
+   } 
+
+  return false; 
 }
 
 float play_blackjack(int number_of_decks) {
@@ -143,7 +153,7 @@ float play_blackjack(int number_of_decks) {
 }
 
 int main() {
-  const int number_of_games = 1;   
+  const int number_of_games = 1000;   
   const int number_of_decks = 4;
   
   for (int game=0; game<number_of_games; game++) {
